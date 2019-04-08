@@ -1,25 +1,26 @@
-<div class="container">   
 <br>
-<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" (reset)="resetForm(form)">
-  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+<div class="container"> <h1>{{title}}</h1>  
+<br>
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" (reset)="resetForm(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
 
-  <div class="form-group">
-    <input name="tarefa" #tarefa="ngModel" [(ngModel)]="service.formData.tarefa" class="form-control" placeholder="Tarefa:" required>
-    <div *ngIf="tarefa.invalid && tarefa.touched" class="validation-error"> Campo requerido.</div>
-  </div>
+    <div class="form-group">
+      <input name="tarefa" #tarefa="ngModel" [(ngModel)]="service.formData.tarefa" class="form-control" placeholder="Tarefa:" required>
+      <div *ngIf="tarefa.invalid && tarefa.touched" class="validation-error"> Campo requerido.</div>
+    </div>
 
-  <div class="form-group">
-    <input name="prioridade" #prioridade="ngModel" [(ngModel)]="service.formData.prioridade" class="form-control" placeholder="Prioridade:">
-  </div>
+    <div class="form-group">
+      <input name="prioridade" #prioridade="ngModel" [(ngModel)]="service.formData.prioridade" class="form-control" placeholder="Prioridade:">
+    </div>
 
-  <div class="form-group">
-    <input name="outros" #outros="ngModel" [(ngModel)]="service.formData.outros" class="form-control" placeholder="Outros:">
-  </div>
+    <div class="form-group">
+      <input name="outros" #outros="ngModel" [(ngModel)]="service.formData.outros" class="form-control" placeholder="Outros:">
+    </div>
 
-  <div class="form-group ">
-    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-primary rounded-pill">Adicionar Tarefa</button>
-    <button type="reset" class="btn btn-lg btn-block btn-danger rounded-pill ">Reset</button>
-  </div>
+    <div class="form-group ">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-primary rounded-pill">Adicionar Tarefa</button>
+      <button type="reset" class="btn btn-lg btn-block btn-danger rounded-pill ">Reset</button>
+    </div>
 
-</form>
+  </form>
 </div> 

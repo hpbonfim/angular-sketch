@@ -18,6 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { TarefasComponent } from './tarefas/tarefas.component';
 import { TarefaComponent } from './tarefas/tarefa/tarefa.component';
 import { ListaTarefasComponent } from './tarefas/lista-tarefas/lista-tarefas.component';
+import { InfoComponent } from './info/info.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ListaTarefasComponent } from './tarefas/lista-tarefas/lista-tarefas.com
     AppComponent,
     TarefasComponent,
     TarefaComponent,
-    ListaTarefasComponent
+    ListaTarefasComponent,
+    InfoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, // IMPORT BROWSER CONFIG

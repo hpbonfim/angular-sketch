@@ -11,8 +11,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./tarefa.component.css']
 })
 export class TarefaComponent implements OnInit {
+  title = "Minhas Tarefas";
 
-  constructor(private service: TarefaService,
+  constructor(public service: TarefaService,
     private firestore: AngularFirestore,
     private toastr: ToastrService) { }
 
