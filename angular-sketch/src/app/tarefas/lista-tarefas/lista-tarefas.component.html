@@ -1,0 +1,18 @@
+<div class="card text-center">
+<table class="table table-hover">
+    <thead>
+      <th>Tarefa</th>
+      <th>Prioridade</th>
+      <th>Outros</th>
+      <th></th>
+    </thead>
+  <tbody>
+    <tr *ngFor="let pos of list">
+      <td (click)="onEdit(pos)">{{pos.tarefa}}</td>
+      <td (click)="onEdit(pos)">{{pos.prioridade}}</td>
+      <td (click)="onEdit(pos)">{{pos.outros}}</td>
+      <td><a class="btn text-danger" (click)="onDelete(pos.id)"><i class="fa fa-trash"></i></a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
