@@ -1,11 +1,14 @@
 <div class="card text-center">
+<!-- TABLE MODULE -->
 <table class="table table-hover">
+<!-- TABLE HEAD -->
     <thead>
       <th>Tarefa</th>
       <th>Prioridade</th>
       <th>Outros</th>
       <th></th>
     </thead>
+<!-- TABLE BODY -->
   <tbody>
     <tr *ngFor="let pos of list">
       <td (click)="onEdit(pos)">{{pos.tarefa}}</td>

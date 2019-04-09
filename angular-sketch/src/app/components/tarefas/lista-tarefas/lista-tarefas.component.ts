@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { TarefaService } from 'src/app/firebase/tarefa.service';
-import { Tarefa } from 'src/app/firebase/tarefa.model';
+import { TarefaService } from 'src/app/components/firebase/tarefa.service';
+import { Tarefa } from 'src/app/components/firebase/tarefa.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

@@ -1,0 +1,97 @@
+<!-- BARRA DE NAVEGACAO -->
+<nav class="navbar dark navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="dashboard/home">
+      <img width="40" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="dashboard">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="dashboard/info">Sobre mim</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="dashboard/tarefas" >Lista de Tarefas</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-danger my-2 my-sm-0" (click)="authService.SignOut()">Sair</button>
+    </div>
+  </nav>
+  
+  
+<div class="jumbotron">
+  <div style="text-align:center">
+    <div class="container">
+      <div class="card">
+        <div class="card-header" style="text-align:center">{{title}}</div>
+        <div *ngIf="authService.userData as user">
+            <img class="align-self-start mr-5 img-thumbnail card-img-top" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
+        </div>
+          <div class="container">
+          <table class="table table-hover">
+              <div class="card text-center">
+                  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" (reset)="resetForm(form)">
+                      <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.userData.id">
+                  
+                      <div class="form-group">
+                        <input name="nome" #nome="ngModel" [(ngModel)]="service.userData.nome" class="form-control" placeholder="Nome" required>
+                        <div *ngIf="nome.invalid && nome.touched" class="validation-error"> Campo requerido.</div>
+                      </div>
+                  
+                      <div class="form-group">
+                            <input name="email" #email="ngModel" [(ngModel)]="service.userData.email" class="form-control" placeholder="Email" required>
+                            <div *ngIf="email.invalid && email.touched" class="validation-error"> Campo requerido.</div>
+                      </div>
+
+                      <div class="form-group">
+                          <input name="telefone" #telefone="ngModel" [(ngModel)]="service.userData.telefone" class="form-control" placeholder="telefone" required>
+                          <div *ngIf="telefone.invalid && telefone.touched" class="validation-error"> Campo requerido.</div>
+                      </div>
+                  
+                      <div class="form-group ">
+                        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-primary rounded-pill">Salvar</button>
+                        <button type="reset" class="btn btn-lg btn-block btn-danger rounded-pill ">Cancelar</button>
+                      </div>
+                  
+                    </form>
+                  <table class="table table-hover">
+                      <tr *ngFor="let pos of list" (click)="onEdit(pos)">
+                        <td>{{pos.nome}}</td>
+                        <td>{{pos.email}}</td>
+                        <td>{{pos.telefone}}</td>
+                      </tr>
+                  </table>
+                  </div>
+            <h5 class="card body bg-light p-2">Redes Sociais</h5>
+            <a href="https://www.github.com/hpbonfim/" target="blank" class="fa fa-github" role="button"></a>    
+            <a href="https://www.instagram.com/hpbonfim/" target="blank" class="fa fa-instagram" role="button"></a>            
+            <a href="https://www.facebook.com/hpbonfim" target="blank" class="fa fa-facebook" role="button"></a>
+            <a href="https://www.linkedin.com/in/hpbonfim/" target="blank" class="fa fa-linkedin" role="button"></a>
+          </table>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+      <!--a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-pinterest"></a>
+      <a href="#" class="fa fa-google" role="button"></a>
+      <a href="#" class="fa fa-youtube" role="button"></a>
+      <a href="#" class="fa fa-snapchat-ghost"></a>
+      <a href="#" class="fa fa-skype"></a>
+      <a href="#" class="fa fa-android"></a>
+      <a href="#" class="fa fa-dribbble"></a>
+      <a href="#" class="fa fa-vimeo"></a>
+      <a href="#" class="fa fa-tumblr"></a>
+      <a href="#" class="fa fa-vine"></a>
+      <a href="#" class="fa fa-foursquare"></a>
+      <a href="#" class="fa fa-stumbleupon"></a>
+      <a href="#" class="fa fa-flickr"></a>
+      <a href="#" class="fa fa-yahoo"></a>
+      <a href="#" class="fa fa-reddit"></a>
+      <a href="#" class="fa fa-rss"></a-->
