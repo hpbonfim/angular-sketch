@@ -20,6 +20,7 @@ import { TarefaComponent } from './tarefas/tarefa/tarefa.component';
 import { ListaTarefasComponent } from './tarefas/lista-tarefas/lista-tarefas.component';
 import { InfoComponent } from './info/info.component';
 import { HomeComponent } from './home/home.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HomeComponent } from './home/home.component';
     AngularFirestoreModule, // INICIALIZE FIRESTORM CONNECTION
     FormsModule, // IMPORT FORMS MODULE CONFIG
     BrowserAnimationsModule, // IMPORT BROWSER ANIMATIONS
-    ToastrModule.forRoot() // IMPORT POP UP CONFIG MODULE
+    ToastrModule.forRoot(), // IMPORT POP UP CONFIG MODULE
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) 
   ],
   providers: [],
   bootstrap: [AppComponent]
