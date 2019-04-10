@@ -1,5 +1,5 @@
 <br>
-<div class="container"> <h1>{{title}}</h1>  
+<div class="container-fluid"> <h1>{{title}}</h1>  
 <br>
 <!-- FORMULARIO -->
   <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" (reset)="resetForm(form)">
@@ -13,14 +13,14 @@
 
     <!-- PRIORIDADE -->
     <div class="form-group">
-      <input name="prioridade" #prioridade="ngModel" [(ngModel)]="service.formData.prioridade" class="form-control" placeholder="Prioridade:">
+      <input name="prioridade" #prioridade="ngModel" [(ngModel)]="service.formData.prioridade" class="form-control" placeholder="Data:">
     </div>
 
-    <!-- OUTROS -->
+    <!-- OUTROS 
     <div class="form-group">
       <input name="outros" #outros="ngModel" [(ngModel)]="service.formData.outros" class="form-control" placeholder="Outros:">
     </div>
-
+    -->
     <!-- BOTAO RESET/ADD TAREFA -->
     <div class="form-group ">
       <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-primary rounded-pill">Adicionar Tarefa</button>

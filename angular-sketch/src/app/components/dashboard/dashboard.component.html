@@ -26,7 +26,7 @@
 </nav>
 
 <!-- CORPO DA PAGINA -->
-<div class="container">
+<div class="container-fluid">
   <div style="text-align:center">
     <main role="main" >
       <div class="pt-3 pb-2 mb-3 border-bottom">
@@ -34,16 +34,16 @@
       </div>
       <!-- FUNCTION GET DATA INFO USER-->
       <div *ngIf="authService.userData as user">
-      <div class="media">
-        <table class="table table-hover">
-          <img class="align-self-start mr-5 img-thumbnail rounded-circle" width="200" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
-          <h3>Bem vindo<br> <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h3>
-          <p>User ID: <strong>{{user.uid}}</strong></p>
-          <p>Email: <strong>{{user.email}}</strong></p>
-          <p>Email Verificado? <strong>{{user.emailVerified}}</strong></p>
-        </table>
+        <div class="media" class="text-center">
+          <img class="img-fluid img-thumbnail" width="200" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
+          <table class="table-responsive table-hover" style="text-align:center">
+            <h3>Bem vindo<br> <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h3>
+            <p>User ID: <strong>{{user.uid}}</strong></p>
+            <p>Email: <strong>{{user.email}}</strong></p>
+            <p>Email Verificado? <strong>{{user.emailVerified}}</strong></p>
+          </table>
+        </div>
       </div>
-    </div>
     </main>
   </div>
 </div>

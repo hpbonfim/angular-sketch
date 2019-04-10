@@ -1,21 +1,21 @@
-<div class="card text-center">
-<!-- TABLE MODULE -->
-<table class="table table-hover">
-<!-- TABLE HEAD -->
-    <thead>
-      <th>Tarefa</th>
-      <th>Prioridade</th>
-      <th>Outros</th>
-      <th></th>
-    </thead>
-<!-- TABLE BODY -->
-  <tbody>
-    <tr *ngFor="let pos of list">
-      <td (click)="onEdit(pos)">{{pos.tarefa}}</td>
-      <td (click)="onEdit(pos)">{{pos.prioridade}}</td>
-      <td (click)="onEdit(pos)">{{pos.outros}}</td>
-      <td><a class="btn text-danger" (click)="onDelete(pos.id)"><i class="fa fa-trash"></i></a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="container-fluid text-center">
+  <div class="table-responsive">
+    <!-- TABLE MODULE -->
+    <table class="table">
+    <!-- TABLE HEAD -->
+        <thead class="thead-dark">
+          <th><i class="fa fa-trash"></i></th>
+          <th>Tarefa</th>
+          <th>Data</th>
+        </thead>
+    <!-- TABLE BODY -->
+      <tbody>
+        <tr *ngFor="let pos of list">
+          <td><a class="btn text-danger" (click)="onDelete(pos.id)"><i class="fa fa-trash"></i></a></td>
+          <td (click)="onEdit(pos)">{{pos.tarefa}}</td>
+          <td (click)="onEdit(pos)">{{pos.prioridade}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
