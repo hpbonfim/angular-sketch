@@ -2,18 +2,18 @@
 <div class="container-fluid"> <h1>{{title}}</h1>  
 <br>
 <!-- FORMULARIO -->
-  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" (reset)="resetForm(form)">
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" (reset)="resetForm(form)" class="was-validated">
     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
 
     <!-- TAREFA -->
     <div class="form-group">
-      <input name="tarefa" #tarefa="ngModel" [(ngModel)]="service.formData.tarefa" class="form-control" placeholder="Tarefa:" required>
-      <div *ngIf="tarefa.invalid && tarefa.touched" class="validation-error"> Campo requerido.</div>
+      <input type="text" name="tarefa" #tarefa="ngModel" [(ngModel)]="service.formData.tarefa" class="form-control is-invalid" placeholder="Tarefa" required>
+        <div *ngIf="tarefa.invalid && tarefa.touched" class="invalid-tooltip"> Campo requerido.</div>
     </div>
-
     <!-- PRIORIDADE -->
     <div class="form-group">
-      <input name="prioridade" #prioridade="ngModel" [(ngModel)]="service.formData.prioridade" class="form-control" placeholder="Data:">
+        <input type="text" name="prioridade" #prioridade="ngModel" [(ngModel)]="service.formData.prioridade" class="form-control is-invalid" placeholder="Data" required>
+        <div *ngIf="tarefa.invalid && tarefa.touched" class="invalid-tooltip"> Campo requerido.</div>
     </div>
 
     <!-- OUTROS 

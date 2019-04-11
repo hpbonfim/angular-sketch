@@ -15,6 +15,7 @@ import { NgForm } from '@angular/forms';
 })
 export class InfoComponent implements OnInit {
   title = "Sobre Mim";
+  editar = false;
   list: Usuario[];
   constructor( 
     public service: UsuarioService,
@@ -38,6 +39,7 @@ export class InfoComponent implements OnInit {
 
   onEdit(info: Usuario) {
     this.service.userData = Object.assign({}, info);
+    this.editar = true;
   }
 
   resetForm(info?: NgForm) {
@@ -49,6 +51,7 @@ export class InfoComponent implements OnInit {
       email: '',
       telefone: '',
     }
+    this.editar = false;
   }
 
   onSubmit(info: NgForm) {

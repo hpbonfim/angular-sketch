@@ -35,6 +35,8 @@ import { ListaTarefasComponent } from 'src/app/components/tarefas/lista-tarefas/
 
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
+import { BarraNavegacaoComponent } from './barra-navegacao/barra-navegacao.component';
+import { BarraNavAuthComponent } from './components/barra-nav-auth/barra-nav-auth.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { AuthService } from "./shared/services/auth.service";
     RegistrarComponent,
     DashboardComponent,
     EsqueceuSenhaComponent,
-    VerificarEmailComponent
+    VerificarEmailComponent,
+    BarraNavegacaoComponent,
+    BarraNavAuthComponent
   ],
   imports: [
     BrowserModule, // IMPORT BROWSER CONFIG

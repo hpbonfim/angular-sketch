@@ -23,14 +23,11 @@
 </nav>
  
 <!-- CORPO DA PAGINA -->
-<div class="card">
+<div class="card" style="text-align:center">
   <div class="jumbotron">
-    <div style="text-align:center">
       <h1>{{ title }}</h1>
       <hr class="my-4">
       <!-- REGISTRO CONCLUIDO-->
-      <div>
-        <div>
           <div class="authBlock">
             <div *ngIf="authService.userData as user">
               <p class="text-center">Um email de confirmaçao foi enviado para <strong>{{user.email}}</strong>.</p>
@@ -38,16 +35,13 @@
             </div>
             <!-- BOTOES -->
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" routerLink="/login" class="btn btn-primary">Login</button>
+              <button type="button" routerLink="/login" class="btn btn-danger">Login</button>
               <!-- FUNCTION SendVerificationMail() authService -->
-              <button type="button" (click)="authService.SendVerificationMail()" class="btn btn-outline-primary">Reenviar email de verificacao</button>
-              <button type="button" routerLink="/home" class="btn btn-primary">Voltar</button>
+              <button type="button" (click)="authService.SendVerificationMail()" class="btn btn-outline-danger">Reenviar email de verificacao</button>
+              <button type="button" routerLink="/home" class="btn btn-danger">Voltar</button>
             </div>
             <hr class="my-4">
           </div>
-        </div>
-      </div>
-    </div>
   </div>        
 </div>
 
