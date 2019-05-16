@@ -1,0 +1,27 @@
+<!-- BARRA DE NAVEGACAO -->
+<app-barra-navegacao></app-barra-navegacao>
+<br>
+<body>
+<!-- CORPO DA PAGINA -->
+  <div class="card">
+    <div class="jumbotron">
+      <div style="text-align:center">
+        <h1 class="display-4">{{ title }}</h1>
+        <hr class="my-4">
+        <p class="text-center">Digite seu email para trocar de senha.</p>
+        <form>
+          <div class="form-group">
+            <input class="form-control" placeholder="Digite seu email" #passwordResetEmail required>
+          </div>
+          <!-- FUNCTION ESQUECEU A SENHA AuthService -->
+          <button type="button" value="Reset Password" routerLink="/login" (click)="authService.ForgotPassword(passwordResetEmail.value)" class="btn btn-danger">Solicitar</button>
+        </form>
+        <hr class="my-4">   
+      </div>
+    </div>
+  </div>
+</body>
+<br>
+<!-- FOOTER -->
+<footer><app-publicfooter></app-publicfooter></footer>
+  

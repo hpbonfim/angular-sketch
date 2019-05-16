@@ -1,0 +1,27 @@
+<!-- BARRA DE NAVEGACAO -->
+<app-barra-nav-auth></app-barra-nav-auth>
+<br>
+<body>
+<!-- CORPO DA PAGINA -->
+<div class="card">
+  <div class="jumbotron">
+    <div style="text-align:center">
+      <h2 class="display-4">{{ titleFriend }}</h2>
+      <hr class="my-4">
+     <!-- FORMULARIO-->
+      <form>
+        <div class="form-group">
+          <input class="form-control" placeholder="Digite o email" #userName required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Digite uma senha" #userPassword required>
+        </div>
+        <!-- FUNCTION SIGN-IN AuthService -->
+        <button type="button" (click)="authService.RegistrarAmigo(userName.value, userPassword.value)" class="btn btn-outline-danger">Registrar</button>
+      </form>
+      <hr class="my-4">
+    </div>
+  </div>
+</div>
+</body>
+<footer><app-protectedfooter></app-protectedfooter></footer>

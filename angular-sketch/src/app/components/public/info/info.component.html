@@ -1,0 +1,25 @@
+<!-- BARRA DE NAVEGACAO -->
+<app-barra-navegacao></app-barra-navegacao>
+<br>
+<body>
+    <div class="container-fluid" style="text-align:center">
+      <div class="card-header">{{title}}</div>
+        <div class="pt-3 pb-2 mb-3 border-top border-bottom">
+          <img class="card-img-top" height="100" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+        </div>
+        <hr class="my-0">
+        <div class="pt-3 pb-2 mb-3 border-top border-bottom">
+          <ul class="list-group list-group-flush" *ngFor="let pos of list">
+            <strong class="list-group-item list-group-item-dark">Nome</strong>
+            <li class="list-group-item"><h5>{{pos.nome}}</h5></li>
+            <strong class="list-group-item list-group-item-dark">Email</strong>
+            <li class="list-group-item"><h5>{{pos.email}}</h5></li>
+            <strong class="list-group-item list-group-item-dark">Telefone</strong>
+            <li class="list-group-item"><h5>{{pos.telefone}}</h5></li>
+          </ul>
+        </div>
+    </div>
+    <!-- FOOTER -->
+  </body>
+  <br>
+<footer><app-publicfooter></app-publicfooter></footer>

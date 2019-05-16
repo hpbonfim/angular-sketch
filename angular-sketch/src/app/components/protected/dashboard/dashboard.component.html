@@ -1,0 +1,31 @@
+<!-- BARRA DE NAVEGACAO -->
+<app-barra-nav-auth></app-barra-nav-auth>  
+<br>
+<body>
+<!-- CORPO DA PAGINA -->
+  <div class="container-fluid">
+    <div style="text-align:center">
+      <main role="main" >
+        <div class="pt-3 pb-2 mb-3 border-bottom">
+          <h2>{{title}}</h2>
+        </div>
+        <!-- FUNCTION GET DATA INFO USER-->
+        <div *ngIf="authService.userData as user">
+          <div class="media" class="text-center">
+            <img class="img-fluid img-thumbnail" width="200" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
+            <table class="table-responsive table-hover" style="text-align:center">
+              <h3>Bem vindo<br> <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h3>
+              <p>User ID: <strong>{{user.uid}}</strong></p>
+              <p>Email: <strong>{{user.email}}</strong></p>
+              <p>Email Verificado? <strong>{{user.emailVerified}}</strong></p>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+<br>
+<!-- FOOTER -->
+<footer><app-protectedfooter></app-protectedfooter></footer>
+  

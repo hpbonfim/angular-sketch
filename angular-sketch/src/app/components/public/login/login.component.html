@@ -1,0 +1,37 @@
+<!-- BARRA DE NAVEGACAO -->
+<app-barra-navegacao></app-barra-navegacao>
+<br>
+<body>
+<!-- CORPO DA PAGINA -->
+<div class="container" style="pad: 1px">
+  <div style="text-align:center">
+      <h1 class="display-4">{{ title }}</h1>
+      <hr class="my-4">
+      <!-- FORMULARIO-->
+      <form>
+        <div class="form-group">
+          <input class="form-control" ria-describedby="emailHelp" placeholder="Email" #userName required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Senha" #userPassword required>
+        </div>
+      </form>
+    
+      <div class="container-fluid" style="text-align:center">
+        <!-- FUNCTION SIGN-IN AuthService -->
+        <button type="button" (click)="authService.SignIn(userName.value, userPassword.value)" class="btn btn-outline-danger btn-responsive">Entrar</button>
+        &nbsp;
+        <button type="button" routerLink="/esqueceu-senha" class="forgotPassword" class="btn btn-outline-dark btn-responsive">Esqueceu a senha?</button>
+        &nbsp;
+        
+    </div>
+      <hr class="my-4">
+      <!-- FUNCTION SIGN-IN GoogleAuth API AuthService -->
+      <p>Log-in com Google</p>
+      <a class="fab fa-google" (click)="authService.GoogleAuth()" role="button"></a>    
+  </div>
+</div>
+</body>
+<!-- FOOTER -->
+<br>
+<footer><app-publicfooter></app-publicfooter></footer>

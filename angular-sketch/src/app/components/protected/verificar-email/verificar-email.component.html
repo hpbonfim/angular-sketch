@@ -1,0 +1,23 @@
+<!-- BARRA DE NAVEGACAO -->
+<app-barra-nav-auth></app-barra-nav-auth>  
+<br>
+<body>
+<!-- CORPO DA PAGINA -->
+  <div class="card" style="text-align:center">
+    <div class="jumbotron">
+        <h1>{{ title }}</h1>
+        <hr class="my-4">
+        <!-- REGISTRO CONCLUIDO-->
+            <div class="authBlock">
+              <div *ngIf="authService.userData as user">
+                <p class="text-center">Um email de confirmaçao foi enviado para <strong>{{user.email}}</strong>.</p>
+                <p class="text-center">Por favor, verifique sua caixa de email e clique no link de confirmaçao.</p>
+              </div>
+                <button type="button" (click)="authService.SendVerificationMail()" class="btn btn-outline-danger">Reenviar email de verificacao</button>
+              <hr class="my-4">
+            </div>
+    </div>        
+  </div>
+</body>
+<footer><app-protectedfooter></app-protectedfooter></footer>
+    

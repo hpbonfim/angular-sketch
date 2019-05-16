@@ -1,0 +1,31 @@
+<br>
+<div class="container-fluid"> <h1>{{title}}</h1>  
+<br>
+<!-- FORMULARIO -->
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" (reset)="resetForm(form)" class="was-validated">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.NovaTarefaData.id">
+
+    <!-- TAREFA -->
+    <div class="form-group">
+      <input type="text" name="tarefa" #tarefa="ngModel" [(ngModel)]="service.NovaTarefaData.tarefa" class="form-control is-invalid" placeholder="Tarefa" required>
+        <div *ngIf="tarefa.invalid && tarefa.touched" class="invalid-tooltip"> Campo requerido.</div>
+    </div>
+    <!-- PRIORIDADE -->
+    <div class="form-group">
+        <input type="text" name="prioridade" #prioridade="ngModel" [(ngModel)]="service.NovaTarefaData.prioridade" class="form-control is-invalid" placeholder="Data" required>
+        <div *ngIf="tarefa.invalid && tarefa.touched" class="invalid-tooltip"> Campo requerido.</div>
+    </div>
+
+    <!-- OUTROS 
+    <div class="form-group">
+      <input name="outros" #outros="ngModel" [(ngModel)]="service.formData.outros" class="form-control" placeholder="Outros:">
+    </div>
+    -->
+    <!-- BOTAO RESET/ADD TAREFA -->
+    <div class="form-group ">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-primary rounded-pill">Adicionar Tarefa</button>
+      <button type="reset" class="btn btn-lg btn-block btn-danger rounded-pill ">Reset</button>
+    </div>
+
+  </form>
+</div> 
